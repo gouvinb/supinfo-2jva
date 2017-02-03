@@ -4,9 +4,9 @@ import com.supinfo.exercises.FizzBuzz;
 import com.supinfo.exercises.Sorter;
 import com.supinfo.gameoflife.GameOfLife;
 import com.supinfo.quizz.QuizzClass;
-
+import com.supinfo.stream.BitmapStream;
 /**
- * Main
+ * ==> https://github.com/gouvinb/supinfo-2jva
  */
 public class Main {
 
@@ -25,7 +25,10 @@ public class Main {
     // Sorter sorter = new Sorter();
     // sorter.runSorter();
 
-    GameOfLife gameOfLife = new GameOfLife();
-    gameOfLife.runGameOfLife1();
+    // GameOfLife gameOfLife = new GameOfLife();
+    // gameOfLife.runGameOfLife2();
+
+    BitmapStream bitmapStream = new BitmapStream();
+    bitmapStream.runBitmapStream();
   }
 }
