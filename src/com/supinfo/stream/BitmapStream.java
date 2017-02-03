@@ -20,7 +20,21 @@ public class BitmapStream {
       List<Integer> subList = integers.subList(138, integers.size());
       addToPixel(subList, 200);
 
-      writeToFile(new FileOutputStream("bitmap_new.bmp"), subList);
+      FileOutputStream outputFile = new FileOutputStream("bitmap_new.bmp");
+      writeToFile(outputFile, integers.subList(0, 138));
+      writeToFile(outputFile, subList);
+
+      try {
+        outputFile.flush();
+        if (outputFile != null) {
+          outputFile.close();
+        }
+      } catch (IOException e) {
+
+        e.printStackTrace();
+
+      }
+
     } catch (FileNotFoundException e) {
       throw new RuntimeException(e);
     }
@@ -49,27 +63,18 @@ public class BitmapStream {
   private void addToPixel(List<Integer> pixels, int value) {
     for (int i = 0; i < pixels.size(); i++) {
       int pixel = pixels.get(i);
-      pixel = (pixel + value) % 255;
+      pixel = (pixel + value % 255);
       pixels.set(i, pixel);
     }
   }
 
   private void writeToFile(FileOutputStream fileOutputStream, List<Integer> pixels) {
-
     try {
       for (Integer pixel : pixels) {
         fileOutputStream.write(pixel);
       }
-      fileOutputStream.flush();
     } catch (IOException e) {
       throw new RuntimeException(e);
-    }
-    if (fileOutputStream != null) {
-      try {
-        fileOutputStream.close();
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
     }
   }
 }

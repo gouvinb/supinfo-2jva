@@ -1,10 +1,8 @@
 package com.supinfo;
 
-import com.supinfo.exercises.FizzBuzz;
-import com.supinfo.exercises.Sorter;
-import com.supinfo.gameoflife.GameOfLife;
-import com.supinfo.quizz.QuizzClass;
-import com.supinfo.stream.BitmapStream;
+import com.supinfo.jzipper.Launcher;
+import com.supinfo.stream.FileStream;
+
 /**
  * ==> https://github.com/gouvinb/supinfo-2jva
  */
@@ -28,7 +26,13 @@ public class Main {
     // GameOfLife gameOfLife = new GameOfLife();
     // gameOfLife.runGameOfLife2();
 
-    BitmapStream bitmapStream = new BitmapStream();
-    bitmapStream.runBitmapStream();
+    // BitmapStream bitmapStream = new BitmapStream();
+    // bitmapStream.runFileStream();
+
+    // FileStream fileStream = new FileStream();
+    // fileStream.runFileStream();
+
+    Launcher launcher = new Launcher();
+    launcher.runJZipper(args);
   }
 }
