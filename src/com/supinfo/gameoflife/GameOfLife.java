@@ -10,16 +10,16 @@ public class GameOfLife {
   }
 
   public void runGameOfLife1() {
-    int numberOfColumns = 10;
+    int numberOfColumns = -2;
     int numberOfLines = 10;
     World world = new World(numberOfColumns, numberOfLines);
     System.out.println(world);
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 100; i++) {
       clear();
       world.newGeneration();
       System.out.println(world);
       try {
-        Thread.sleep(1000);
+        Thread.sleep(3000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
