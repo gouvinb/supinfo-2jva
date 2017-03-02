@@ -6,6 +6,7 @@ public class FizzBuzz {
     System.out.println("Initialization du FizzBuzz");
   }
 
+  @SuppressWarnings("SameParameterValue")
   public void runFizzBuzz(int start, int end) {
     if (start >= end) {
       return;

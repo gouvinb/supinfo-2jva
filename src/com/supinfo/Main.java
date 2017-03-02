@@ -1,16 +1,13 @@
 package com.supinfo;
 
-import com.supinfo.jzipper.Launcher;
-import com.supinfo.stream.FileStream;
+import com.supinfo.philosophers.lock.PhilosophersLock;
 
 /**
- * ==> https://github.com/gouvinb/supinfo-2jva
+ * https://github.com/gouvinb/supinfo-2jva
  */
-public class Main {
+class Main {
 
   public static void main(String[] args) {
-    System.out.println("Hello Dude!");
-
     // QuizzClass quizz = new QuizzClass();
     // quizz.questionUn();
     // quizz.questionDeux();
@@ -24,15 +21,38 @@ public class Main {
     // sorter.runSorter();
 
     // GameOfLife gameOfLife = new GameOfLife();
+    // gameOfLife.runGameOfLife1();
     // gameOfLife.runGameOfLife2();
 
     // BitmapStream bitmapStream = new BitmapStream();
-    // bitmapStream.runFileStream();
+    // bitmapStream.runBitmapStream();
 
     // FileStream fileStream = new FileStream();
     // fileStream.runFileStream();
 
-    Launcher launcher = new Launcher();
-    launcher.runJZipper(args);
+    // JZipper jzipper = new JZipper();
+    // jzipper.runJZipper(args);
+
+    PhilosophersLock philosophersLock = new PhilosophersLock();
+    philosophersLock.runPhilosophersLock();
+
+    // PhilosophersSync philosophersSync = new PhilosophersSync();
+    // philosophersSync.runPhilosophersSync();
+
+    // BinaryConverterClient binaryConverterClient = new BinaryConverterClient();
+    // binaryConverterClient.runBinaryConverterClient();
+
+    // BinaryConverterServer binaryConverterServer = new BinaryConverterServer();
+    // binaryConverterServer.runBinaryConverterServer();
+
+    // JavaParadise javaParadise = new JavaParadise();
+    // javaParadise.runJavaParadise();
+
+    // JavaParadiseGui javaParadiseGui = new JavaParadiseGui();
+    // javaParadiseGui.runJavaParadiseGuiTrip();
+    // javaParadiseGui.runJavaParadiseGuiPlace();
+
+    // JavaParadiseDashboard javaParadiseDashboard = new JavaParadiseDashboard();
+    // javaParadiseDashboard.runJavaParadiseDashboard();
   }
 }

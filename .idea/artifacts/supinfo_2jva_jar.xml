@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="supinfo-2jva:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/supinfo_2jva_jar</output-path>
+    <root id="archive" name="supinfo-2jva.jar">
+      <element id="module-output" name="supinfo-2jva" />
+    </root>
+  </artifact>
+</component>

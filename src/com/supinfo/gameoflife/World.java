@@ -1,14 +1,13 @@
 package com.supinfo.gameoflife;
 
-import java.util.Arrays;
 import java.util.Random;
 
-public class World {
+class World {
 
   private Cell[][] cells;
   private int[][] cellsNeighbours;
 
-  public World(int numberOfColumns, int numberOfRows) {
+  World(int numberOfColumns, int numberOfRows) {
     if (numberOfColumns < 0 || numberOfRows < 0) {
       throw new IllegalArgumentException("You must give positives array sizes");
     }
@@ -28,15 +27,16 @@ public class World {
     }
   }
 
+  @SuppressWarnings("unused")
   public World(Cell[][] cells) {
     this.cells = cells;
     cellsNeighbours = new int[cells.length][cells[0].length];
   }
 
-  public void newGeneration() {
+  void newGeneration() {
     for (int y = 0; y < cells.length; y++) {
       for (int x = 0; x < cells[y].length; x++) {
-        cellsNeighbours[y][x] =  computeNumberOfNeighbours(y, x);
+        cellsNeighbours[y][x] = computeNumberOfNeighbours(y, x);
       }
     }
 
@@ -52,11 +52,11 @@ public class World {
 
     int yMin = yTab == 0 ? 0 : yTab - 1;
     int yMax = yTab == cells.length - 1 ? cells.length - 1 : yTab + 1;
-    int xMin = xTab == 0 ? 0 : xTab -1;
+    int xMin = xTab == 0 ? 0 : xTab - 1;
     int xMax = xTab == cells[yTab].length - 1 ? cells[yTab].length - 1 : xTab + 1;
 
-    for(int y = yMin; y <= yMax; y++) {
-      for(int x = xMin; x <= xMax; x++) {
+    for (int y = yMin; y <= yMax; y++) {
+      for (int x = xMin; x <= xMax; x++) {
         if (cells[y][x].isAlive() && !(y == yTab && x == xTab)) {
           sumOfNeighbours++;
         }
@@ -68,10 +68,8 @@ public class World {
   @Override
   public String toString() {
     StringBuilder builder = new StringBuilder();
-    for (int i1 = 0; i1 < cells.length; i1++) {
-      Cell[] cell = cells[i1];
-      for (int i = 0; i < cell.length; i++) {
-        Cell aCell = cell[i];
+    for (Cell[] cell : cells) {
+      for (Cell aCell : cell) {
         builder.append(aCell.getAsString()).append(" ");
       }
       builder.append(System.lineSeparator());
