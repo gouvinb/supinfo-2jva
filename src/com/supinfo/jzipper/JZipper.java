@@ -1,7 +1,7 @@
 package com.supinfo.jzipper;
 
-public class Launcher {
-  public Launcher() {
+public class JZipper {
+  public JZipper() {
     System.out.println("Initialisation de JZipper");
   }
 

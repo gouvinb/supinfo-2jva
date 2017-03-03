@@ -26,13 +26,9 @@ public class BitmapStream {
 
       try {
         outputFile.flush();
-        if (outputFile != null) {
-          outputFile.close();
-        }
+        outputFile.close();
       } catch (IOException e) {
-
         e.printStackTrace();
-
       }
 
     } catch (FileNotFoundException e) {
@@ -50,16 +46,15 @@ public class BitmapStream {
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-    if (inputStream != null) {
-      try {
-        inputStream.close();
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
+    try {
+      inputStream.close();
+    } catch (IOException e) {
+      e.printStackTrace();
     }
     return integers;
   }
 
+  @SuppressWarnings("SameParameterValue")
   private void addToPixel(List<Integer> pixels, int value) {
     for (int i = 0; i < pixels.size(); i++) {
       int pixel = pixels.get(i);

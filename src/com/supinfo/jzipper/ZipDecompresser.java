@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-public class ZipDecompresser {
+class ZipDecompresser {
 
-  private String archive;
+  private final String archive;
 
   ZipDecompresser(String archive) {
     this.archive = archive;
@@ -17,8 +17,8 @@ public class ZipDecompresser {
   void decompress() {
     FileInputStream fis = null;
     ZipInputStream zis = null;
-    FileOutputStream fos = null;
-    ZipEntry entry = null;
+    FileOutputStream fos;
+    ZipEntry entry;
     try {
       fis = new FileInputStream(archive);
       zis = new ZipInputStream(fis);
@@ -47,13 +47,5 @@ public class ZipDecompresser {
       e.printStackTrace();
     }
 
-  }
-
-  public String getArchive() {
-    return archive;
-  }
-
-  public void setArchive(String archive) {
-    this.archive = archive;
   }
 }

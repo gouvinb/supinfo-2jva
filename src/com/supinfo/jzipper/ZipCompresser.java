@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public class ZipCompresser {
-  private String archive;
-  private String fileName;
+class ZipCompresser {
+  private final String archive;
+  private final String fileName;
 
   ZipCompresser(String archive, String fileName) {
     this.archive = archive;
@@ -20,7 +20,7 @@ public class ZipCompresser {
     FileOutputStream fos = null;
     ZipOutputStream zos = null;
     FileInputStream fis = null;
-    ZipEntry entry = null;
+    ZipEntry entry;
     try {
       fos = new FileOutputStream(archive);
       zos = new ZipOutputStream(fos);
@@ -53,21 +53,5 @@ public class ZipCompresser {
     } catch (IOException e) {
       e.printStackTrace();
     }
-  }
-
-  public String getArchive() {
-    return archive;
-  }
-
-  public void setArchive(String archive) {
-    this.archive = archive;
-  }
-
-  public String getFileName() {
-    return fileName;
-  }
-
-  public void setFileName(String fileName) {
-    this.fileName = fileName;
   }
 }

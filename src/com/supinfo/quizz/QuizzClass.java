@@ -9,6 +9,7 @@ public class QuizzClass {
         System.out.println("initialisation du quizz");
     }
 
+    @SuppressWarnings("ConstantConditions")
     public void questionUn() {
         System.out.println("Question 1 :");
         long aLong = 0;
@@ -25,6 +26,7 @@ public class QuizzClass {
         System.out.println(aDouble);
     }
 
+    @SuppressWarnings("ConstantConditions")
     public void questionDeux() {
         System.out.println("Question 2 :");
         int a = 5;

@@ -1,6 +1,7 @@
 package com.supinfo;
 
-import com.supinfo.philosophers.lock.PhilosophersLock;
+import com.supinfo.binaryconverter.client.BinaryConverterClient;
+import com.supinfo.binaryconverter.server.BinaryConverterServer;
 
 /**
  * https://github.com/gouvinb/supinfo-2jva
@@ -33,17 +34,17 @@ class Main {
     // JZipper jzipper = new JZipper();
     // jzipper.runJZipper(args);
 
-    PhilosophersLock philosophersLock = new PhilosophersLock();
-    philosophersLock.runPhilosophersLock();
+    // PhilosophersLock philosophersLock = new PhilosophersLock();
+    // philosophersLock.runPhilosophersLock();
 
-    // PhilosophersSync philosophersSync = new PhilosophersSync();
-    // philosophersSync.runPhilosophersSync();
+//     PhilosophersSync philosophersSync = new PhilosophersSync();
+//     philosophersSync.runPhilosophersSync();
 
-    // BinaryConverterClient binaryConverterClient = new BinaryConverterClient();
-    // binaryConverterClient.runBinaryConverterClient();
+//    BinaryConverterServer binaryConverterServer = new BinaryConverterServer();
+//    binaryConverterServer.runBinaryConverterServer();
 
-    // BinaryConverterServer binaryConverterServer = new BinaryConverterServer();
-    // binaryConverterServer.runBinaryConverterServer();
+    BinaryConverterClient binaryConverterClient = new BinaryConverterClient();
+    binaryConverterClient.runBinaryConverterClient();
 
     // JavaParadise javaParadise = new JavaParadise();
     // javaParadise.runJavaParadise();
