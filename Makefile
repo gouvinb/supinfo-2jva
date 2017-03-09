@@ -50,7 +50,7 @@ notify:
 
 run:
 	@echo "==> Run $(NAME) ...";
-	java -classpath $(shell pwd):$(OUT_DIR) $(MAIN_CLASS)
+	java -classpath "$(shell pwd):$(OUT_DIR):$(shell pwd)/lib/mysql-connector-java-5.1.41-bin.jar" $(MAIN_CLASS)
 
 signing:
 	jarsigner -keystore KeyStore.jks $(PATH_JAR) com.supinfo

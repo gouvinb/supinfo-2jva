@@ -1,7 +1,7 @@
 package com.supinfo;
 
-import com.supinfo.binaryconverter.client.BinaryConverterClient;
-import com.supinfo.binaryconverter.server.BinaryConverterServer;
+import com.supinfo.internationalization.JFrameTranslate;
+import com.supinfo.javaparadise.JavaParadiseDashboard;
 
 /**
  * https://github.com/gouvinb/supinfo-2jva
@@ -37,14 +37,14 @@ class Main {
     // PhilosophersLock philosophersLock = new PhilosophersLock();
     // philosophersLock.runPhilosophersLock();
 
-//     PhilosophersSync philosophersSync = new PhilosophersSync();
-//     philosophersSync.runPhilosophersSync();
+    // PhilosophersSync philosophersSync = new PhilosophersSync();
+    // philosophersSync.runPhilosophersSync();
 
-//    BinaryConverterServer binaryConverterServer = new BinaryConverterServer();
-//    binaryConverterServer.runBinaryConverterServer();
+    // BinaryConverterServer binaryConverterServer = new BinaryConverterServer();
+    // binaryConverterServer.runBinaryConverterServer();
 
-    BinaryConverterClient binaryConverterClient = new BinaryConverterClient();
-    binaryConverterClient.runBinaryConverterClient();
+    // BinaryConverterClient binaryConverterClient = new BinaryConverterClient();
+    // binaryConverterClient.runBinaryConverterClient();
 
     // JavaParadise javaParadise = new JavaParadise();
     // javaParadise.runJavaParadise();
@@ -55,5 +55,11 @@ class Main {
 
     // JavaParadiseDashboard javaParadiseDashboard = new JavaParadiseDashboard();
     // javaParadiseDashboard.runJavaParadiseDashboard();
+
+    // JFrameTranslate jFrameTranslate = new JFrameTranslate();
+    // jFrameTranslate.runJFrameTranslate();
+
   }
+
+
 }

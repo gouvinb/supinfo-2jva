@@ -35,7 +35,10 @@ public class Place {
 
     Place place = (Place) o;
 
-    return (id != null ? id.equals(place.id) : place.id == null) && (name != null ? name.equals(place.name) : place.name == null);
+    if (id != null ? !id.equals(place.id) : place.id != null) {
+      return false;
+    }
+    return name != null ? name.equals(place.name) : place.name == null;
   }
 
   @Override
@@ -47,6 +50,10 @@ public class Place {
 
   @Override
   public String toString() {
+    //return "Place{" +
+    //    "id=" + id +
+    //    ", name='" + name + '\'' +
+    //    '}';
     return name;
   }
 }

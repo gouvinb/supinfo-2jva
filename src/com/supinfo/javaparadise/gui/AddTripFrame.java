@@ -13,6 +13,8 @@ import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -93,7 +95,7 @@ public class AddTripFrame extends JFrame {
     this.setTitle("Add trip");
     this.setSize(260, 170);
     this.setMinimumSize(new Dimension(260, 100));
-    this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    // this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     this.setLocationRelativeTo(null);
     this.setContentPane(rootPane);
     this.setVisible(true);
@@ -139,9 +141,8 @@ public class AddTripFrame extends JFrame {
       Long id = tripDao.createTrip(trip);
       JOptionPane.showConfirmDialog(AddTripFrame.this, "Trip added into DB with ID: " + id, "Message", JOptionPane.DEFAULT_OPTION);
     });
-    tripCancel.addActionListener(e -> {
+    tripCancel.addActionListener((ActionEvent e) -> {
       AddTripFrame.this.dispose();
-      System.exit(0);
     });
   }
 }

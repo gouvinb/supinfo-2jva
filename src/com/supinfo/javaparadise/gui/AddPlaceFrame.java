@@ -43,7 +43,7 @@ public class AddPlaceFrame extends JFrame {
 
     this.setTitle("Add place");
     this.setSize(280, 70);
-    this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    // this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     this.setContentPane(rootPane);
     this.setLocationRelativeTo(null);
     this.setVisible(true);

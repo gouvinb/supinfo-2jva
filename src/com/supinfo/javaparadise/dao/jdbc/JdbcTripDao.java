@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by gouvinb on 01/03/2017.
@@ -70,6 +72,40 @@ public class JdbcTripDao extends JdbcDao implements TripDao {
       }
     } catch (SQLException e) {
       throw new RuntimeException("Unable to find trip with id: " + id, e);
+    }
+  }
+
+  @Override
+  public List<Trip> findAllTrip() {
+    List<Trip> allTrip = new ArrayList<>();
+
+    try (PreparedStatement statement = getConnection().prepareStatement("SELECT " +
+        "trip.id, departure.id, departure.name, destination.id, destination.name, trip.price " +
+        "FROM trips trip " +
+        "JOIN places departure ON departure.id = trip.departure " +
+        "JOIN places destination ON destination.id = trip.destination ")) {
+      ResultSet resultSet = statement.executeQuery();
+      while (resultSet.next()) {
+        Trip trip = new Trip();
+        trip.setId(resultSet.getLong(1));
+
+        Place departure = new Place();
+        departure.setId(resultSet.getLong(2));
+        departure.setName(resultSet.getString(3));
+        trip.setDeparture(departure);
+
+        Place destination = new Place();
+        destination.setId(resultSet.getLong(4));
+        destination.setName(resultSet.getString(5));
+        trip.setDestination(destination);
+
+        trip.setPrice(resultSet.getBigDecimal(6));
+
+        allTrip.add(trip);
+      }
+      return allTrip;
+    } catch (SQLException e) {
+      throw new RuntimeException("Unable to find all trip", e);
     }
   }
 

@@ -3,6 +3,10 @@ package com.supinfo.javaparadise;
 import com.supinfo.javaparadise.gui.AddPlaceFrame;
 import com.supinfo.javaparadise.gui.AddTripFrame;
 
+import java.awt.Font;
+
+import javax.swing.JPanel;
+
 /**
  * Created by gouvinb on 01/03/2017.
  */
